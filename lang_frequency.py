@@ -3,7 +3,7 @@ import re
 from collections import defaultdict
 
 
-def load_data(filepath):
+def load_text(filepath):
     with open(filepath, 'r') as file:
         text = re.sub('\W+', ' ', file.read().lower())
     return text.split(' ')
@@ -27,8 +27,8 @@ if __name__ == '__main__':
         sys.exit('Вы не указали путь к файлу!')
     filepath = sys.argv[1]
     try:
-        data = load_data(filepath)
+        loaded_text = load_text(filepath)
     except FileNotFoundError:
         sys.exit('Файл отсутствует!')
-    most_frequent_words = get_most_frequent_words(data)
+    most_frequent_words = get_most_frequent_words(loaded_text)
     pprint_frequent_words(most_frequent_words)
