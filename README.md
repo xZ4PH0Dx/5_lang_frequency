@@ -10,25 +10,26 @@ You should pass a path to a file that you want to be analyzed.
 $python3 lang_frequency.py /home/ubuntu/git/misc/idiomatic_python
 Слова, которые встречаются в тексте чаще всего:
 
-Слово:  the  Количество повторений:  316
+         the    316
 
-Слово:  a  Количество повторений:  228
+           a    228
 
-Слово:  to  Количество повторений:  153
+          to    153
 
-Слово:  in  Количество повторений:  137
+          in    137
 
-Слово:  container  Количество повторений:  136
+   container    136
 
-Слово:  is  Количество повторений:  134
+          is    134
 
-Слово:  handout  Количество повторений:  124
+     handout    124
 
-Слово:  of  Количество повторений:  119
+          of    119
 
-Слово:  for  Количество повторений:  95
+         for     95
 
-Слово:  class  Количество повторений:  93
+       class     93
+
 ```
 
 # Project Goals
