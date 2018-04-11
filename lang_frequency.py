@@ -3,6 +3,9 @@ import re
 from collections import Counter
 
 
+NUMBER_OF_WORDS = 10
+
+
 def load_file(filepath):
     with open(filepath, 'r') as file:
         return file.read()
@@ -17,7 +20,7 @@ def get_most_frequent_words(words_list):
     words = Counter()
     for word in words_list:
         words[word] += 1
-    return words.most_common(10)
+    return words.most_common(NUMBER_OF_WORDS)
 
 
 def pprint_frequent_words(sorted_words_list):
