@@ -1,6 +1,6 @@
 import sys
 import re
-from collections import defaultdict, Counter
+from collections import Counter
 
 
 def load_file(filepath):
@@ -15,10 +15,7 @@ def get_words_list(loaded_file):
 
 def get_most_frequent_words(words_list):
     number_of_words = 10
-    words = defaultdict(int)
-    for word in words_list:
-        words[word] += 1
-    words = Counter(words)
+    words = Counter(words_list)
     return words.most_common(number_of_words)
 
 
