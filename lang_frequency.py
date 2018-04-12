@@ -1,9 +1,6 @@
 import sys
 import re
-from collections import Counter
-
-
-NUMBER_OF_WORDS = 10
+from collections import defaultdict, Counter
 
 
 def load_file(filepath):
@@ -17,10 +14,12 @@ def get_words_list(loaded_file):
 
 
 def get_most_frequent_words(words_list):
-    words = Counter()
+    number_of_words = 10
+    words = defaultdict(int)
     for word in words_list:
         words[word] += 1
-    return words.most_common(NUMBER_OF_WORDS)
+    words = Counter(words)
+    return words.most_common(number_of_words)
 
 
 def pprint_frequent_words(sorted_words_list):
@@ -34,9 +33,9 @@ if __name__ == '__main__':
         sys.exit('Вы не указали путь к файлу!')
     filepath = sys.argv[1]
     try:
-        loaded_file = load_file(filepath)
+        loaded_text = load_file(filepath)
     except FileNotFoundError:
         sys.exit('Файл отсутствует!')
-    words_list = get_words_list(loaded_file)
+    words_list = get_words_list(loaded_text)
     most_frequent_words = get_most_frequent_words(words_list)
     pprint_frequent_words(most_frequent_words)
